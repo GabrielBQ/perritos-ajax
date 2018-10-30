@@ -11,5 +11,13 @@ dogPromise
     return apiResponse.json();
   })
   .then(function(jsonResponse) {
-    console.log(jsonResponse);
+    console.log(jsonResponse.message); // aquí es donde se encuentra la URL de la imagen
+    const img = document.createElement("img");//creamos la imagen
+    console.log(img);
+    img alt = "Perrito Bonito!";//dar la parte alternativa a la foto
+    console.log(img);
+    img src = jsonResponse.message;//es la direccion de la imagen va a estar aquí
+    console.log(img);
+    const container = document.querySelector(".perretes")
+    container.appendChild(img); //coge src y alt y los mete dentro del div que le mandes antes del punto
   });
