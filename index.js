@@ -6,14 +6,18 @@ function start() {
 
 function onClick() {
   const randomDogUrl = "https://dog.ceo/api/breeds/image/random";
+
   fetch(randomDogUrl)
-    .then(function(response) {
-      return response.json();
-    })
+    .then(toJson)
+
     .then(function(response2) {
       const img = document.createElement("img");
       img.alt = "Un Lindo Perrito";
       img.src = response2.message;
       document.querySelector(".perretes").appendChild(img);
     });
+}
+
+function toJson(apiResponse) {
+  return apiResponse.json();
 }
