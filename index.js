@@ -10,14 +10,19 @@ function onClick() {
   fetch(randomDogUrl)
     .then(toJson)
 
-    .then(function(response2) {
-      const img = document.createElement("img");
-      img.alt = "Un Lindo Perrito";
-      img.src = response2.message;
+    .then(function(jsonResponse) {
+      const img = imgToDOM(jsonResponse.message);
       document.querySelector(".perretes").appendChild(img);
     });
 }
 
 function toJson(apiResponse) {
   return apiResponse.json();
+}
+
+function imgToDOM(dogUrl) {
+  const img = document.createElement("img");
+  img.alt = "Un Lindo Perrito";
+  img.src = dogUrl;
+  return img;
 }
