@@ -21,3 +21,21 @@ dogPromise
     const container = document.querySelector(".perretes")
     container.appendChild(img); //coge src y alt y los mete dentro del div que le mandes antes del punto
   });
+//De esta forma ya casi estaría, solo nos falta añadir la funcion onClick para que al cliquear aparezca la imagen
+//Así:
+const button = document.querySelector("add-perretes");//nombramos el botón(o no)
+button.addEventListener("click", onClick);//(le añadimos el evento)
+
+function onClick(_event){     // metemos todo dentro de la función
+fetch(RANDOM_DOG_URL)
+.then(function (apiResponse {
+  return apiResponse.json();
+})
+  .then(function(jsonResponse) {
+    const img = document.createElement("img");
+    img.alt = "Perrito Bonito!";
+    img.src = jsonResponse.message;
+
+    document.querySelector(".perretes").appendChild(img);
+  });
+}
