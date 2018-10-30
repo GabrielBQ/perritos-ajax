@@ -1,4 +1,8 @@
-document.querySelector(".add-perretes").addEventListener("click", onClick);
+start();
+
+function start() {
+  document.querySelector(".add-perretes").addEventListener("click", onClick);
+}
 
 function onClick() {
   const randomDogUrl = "https://dog.ceo/api/breeds/image/random";
