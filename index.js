@@ -28,6 +28,9 @@ function onClickBreeds(_event) {
       label.htmlFor = "breed-select";
       label.innerText = "🐶 Escoge una Raza 🐶 ";
       document.querySelector(".breed-container").appendChild(label);
+      const select = document.createElement("select");
+      select.id = "breed-select";
+      document.querySelector(".breed-container").appendChild(select);
     });
   /*<label for="breed-select">🐶 Escoge una Raza 🐶 </label>
     <p></p><select class="breeds-select">
