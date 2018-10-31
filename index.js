@@ -23,7 +23,17 @@ function onClickBreeds(_event) {
     .then(function(jsonResponse) {
       const breeds = jsonResponse.message;
       console.log(breeds);
+      const label = document.createElement("label");
+      label.htmlFor = "breed-select";
+      label.innerText = "🐶 Escoge una Raza 🐶 ";
+      document.querySelector(".breed-container").appendChild(label);
     });
+  /*<label for="breed-select">🐶 Escoge una Raza 🐶 </label>
+    <p></p><select class="breeds-select">
+      <option value="affenpinscher">affenpinscher</option>
+      <option value="african">african</option>
+      <option value="airedale">airedale</option>
+    </select>*/
 }
 
 function toJson(apiResponse) {
