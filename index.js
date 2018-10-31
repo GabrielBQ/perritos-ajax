@@ -31,6 +31,10 @@ function onClickBreeds(_event) {
       const select = document.createElement("select");
       select.id = "breed-select";
       document.querySelector(".breed-container").appendChild(select);
+      const option = document.createElement("option");
+      option.value = "";
+      option.innerText = "🐺Coge una Raza🐺";
+      document.querySelector("#breed-select").appendChild(option);
     });
   /*<label for="breed-select">🐶 Escoge una Raza 🐶 </label>
     <p></p><select class="breeds-select">
@@ -39,6 +43,7 @@ function onClickBreeds(_event) {
       <option value="airedale">airedale</option>
     </select>*/
 }
+s;
 
 function toJson(apiResponse) {
   return apiResponse.json();
