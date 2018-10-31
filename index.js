@@ -2,6 +2,7 @@ start();
 
 function start() {
   document.querySelector(".add-perretes").addEventListener("click", onClick);
+  document.querySelector(".add-razas").addEventListener("click", onClickBreeds);
 }
 
 function onClick() {
@@ -11,6 +12,10 @@ function onClick() {
     .then(toJson)
 
     .then(toJsonResponse);
+}
+
+function onClickBreeds(_event) {
+  console.log(_event);
 }
 
 function toJson(apiResponse) {
